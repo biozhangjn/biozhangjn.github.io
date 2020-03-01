@@ -3,7 +3,10 @@
 conda list 安装和更新
 conda install XXX conda update XXX conda update --all #更新所有库 conda update conda #更新conda conda updata anaconda #更新anaconda 环境相关
 conda config --add channels conda-forge conda config --add channels bioconda conda create -n salmon salmon #创建环境 conda activate salmon #激活环境 conda deactivate #退出环境 #conda remove -n salmon #删除环境，不要乱删 conda env list #显示所有环境 清理软件
-conda clean -p //删除多余的包 conda clean -y -all //删除所有的安装包及cache</div></div><div><h2><a href=/post/vscode-r/>VScode-R</a></h2><div class=article-style>How to use R in VScode 安装R和VScode 额，打开Google，搜索官网，自己安装即可。不会？Alt + F4，再见！
+conda clean -p //删除多余的包 conda clean -y -all //删除所有的安装包及cache</div></div><div><h2><a href=/post/salmon/>Salmon</a></h2><div class=article-style>#Salmon代码备存
+听说你还可以分析scRNA
+salmon alevin -l ISR -1 Pi_F_S1_L005_R1_001.fastq.gz -2 Pi_F_S1_L005_R2_001.fastq.gz --chromium -i ~/index/ggzjn_index/ -p 10 --dumpMtx -o alevin_output/ --tgMap txp2gene.txt --expectCells 18000 salmon alevin -l ISR -1 Pi_M_S1_L004_R1_001.fastq.gz -2 Pi_M_S1_L004_R2_001.fastq.gz --chromium -i ~/index/ggzjn_index/ -p 15 --dumpMtx -o alevin_output/ --tgMap txp2gene.txt --expectCells 18000 数据下载-plan A
+#!/bin/bash for fn in SRR1299{036..049}; do samp=`basename ${fn}` echo "Processing sample ${samp}" ascp -QT -l 300m -P33001 -i ~/miniconda3/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:/vol1/srr/SRR707/008/${fn} ./ mv ${fn} ${fn}.sra done 数据下载-plan B</div></div><div><h2><a href=/post/vscode-r/>VScode-R</a></h2><div class=article-style>How to use R in VScode 安装R和VScode 额，打开Google，搜索官网，自己安装即可。不会？Alt + F4，再见！
 相关插件安装及设置 打开安装好的R程序，安装languageserver包，实现 R 和 编辑器的同步。
 install.packages("languageserver") 打开安装好的VScode程序，插件里面搜索并安装R LSP Client和R插件，很简单的；然后设置R在VScode中的路径，打开设置界面，在搜索框中输入 r.lsp，找到你电脑操作系统所对应的设置 ( Linux 系统选择 Rterm: Linux，Windows 系统则选择 Rterm: Windows)，然后在编辑栏中输入你的 R 可执行文件位置（如果是默认安装的 R 3.6.2 版本，位置应该是 C:\Program Files\R\R-3.6.2\bin\x64\R.exe）。
 难点来了，安装 radian: A 21 century R console，替换原始R界面。
