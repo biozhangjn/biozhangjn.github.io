@@ -19,7 +19,56 @@ conda env list #显示所有环境
 &lt;/code>&lt;/pre>
 &lt;p>&lt;strong>清理软件&lt;/strong>&lt;/p>
 &lt;pre>&lt;code>conda clean -p //删除多余的包
-conda clean -y -all //删除所有的安装包及cache&lt;/code>&lt;/pre></description></item><item><title>Writing technical content in Academic</title><link>/post/writing-technical-content/</link><pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate><guid>/post/writing-technical-content/</guid><description>&lt;p>Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p>
+conda clean -y -all //删除所有的安装包及cache&lt;/code>&lt;/pre></description></item><item><title>VScode-R</title><link>/post/vscode-r/</link><pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate><guid>/post/vscode-r/</guid><description>&lt;h1 id="how-to-use-r-in-vscode">How to use R in VScode&lt;/h1>
+&lt;h2 id="安装r和vscode">安装R和VScode&lt;/h2>
+&lt;p>额，打开Google，搜索官网，自己安装即可。不会？&lt;code>Alt + F4&lt;/code>，再见！&lt;/p>
+&lt;h2 id="相关插件安装及设置">相关插件安装及设置&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>打开安装好的R程序，安装&lt;code>languageserver&lt;/code>包，实现 R 和 编辑器的同步。&lt;/p>
+&lt;pre>&lt;code class="language-r">install.packages(&amp;quot;languageserver&amp;quot;)
+&lt;/code>&lt;/pre>
+&lt;/li>
+&lt;li>
+&lt;p>打开安装好的VScode程序，插件里面搜索并安装&lt;code>R LSP Client&lt;/code>和&lt;code>R&lt;/code>插件，很简单的；然后设置R在VScode中的路径，打开设置界面，在搜索框中输入 &lt;strong>&lt;code>r.lsp&lt;/code>&lt;/strong>，找到你电脑操作系统所对应的设置 ( Linux 系统选择 Rterm: Linux，Windows 系统则选择 Rterm: Windows)，然后在编辑栏中输入你的 R 可执行文件位置（如果是默认安装的 R 3.6.2 版本，位置应该是 &lt;code>C:\Program Files\R\R-3.6.2\bin\x64\R.exe&lt;/code>）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>难点来了，安装
+&lt;a href="https://github.com/randy3k/radian" target="_blank" rel="noopener">&lt;code>radian: A 21 century R console&lt;/code>&lt;/a>，替换原始R界面。&lt;/p>
+&lt;blockquote>
+&lt;p>radian is an alternative console for the R program with multiline editing and rich syntax highlight.&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;code>radian&lt;/code>基于python，所以先在电脑上安装python，当然，你可以选择anaconda安装，不过，我还是觉得自己安装在window10里面也没问题，接下来就是相关核心步骤。&lt;/li>
+&lt;li>下载并安装合适版本的
+&lt;a href="https://www.python.org/downloads/" target="_blank" rel="noopener">&lt;code>pyhton&lt;/code>&lt;/a>，安装的时候特别要注意勾上&lt;code>Add Python 3.8 to PATH&lt;/code>，然后点&lt;code>Install Now&lt;/code>即可完成安装。&lt;/li>
+&lt;li>打开VScode的终端，输入&lt;code>python&lt;/code>，如果显示版本并进入python即安装成功，输入&lt;code>exit()&lt;/code>回到powershell中。然后输入&lt;code>pip install -U radian&lt;/code>安装&lt;code>radian&lt;/code>，输入&lt;code>pip install jedi&lt;/code>安装&lt;code>jedi&lt;/code>。输入&lt;code>radian&lt;/code>提示R版本即安装成功。&lt;/li>
+&lt;li>在 VSCode 中重新设置&lt;code>Rterm.Windows&lt;/code>为&lt;code>radian.exe&lt;/code>路径，&lt;br>例如&lt;code>C:\Users\zjn\AppData\Local\Programs\Python\Python38\Scripts\radian.exe&lt;/code>；&lt;/li>
+&lt;li>找到&lt;code>Rterm.Option&lt;/code>选项，在设置中关闭&lt;code>--no-save&lt;/code>和&lt;code>no-restore&lt;/code>两个选项即可，重启即可使用&lt;strong>VScode&lt;/strong>运行&lt;strong>R&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;ol start="4">
+&lt;li>
+&lt;p>在 VSCode 中设置R输入快捷键，如&lt;code>Alt + -&lt;/code>输入&lt;code>&amp;lt;-&lt;/code>。打开 Keyboard Shortcuts （快捷键是 CTRL+K CTRL+S），右上点开&lt;code>keybindings.json&lt;/code>文件，输入下面代码即可。&lt;/p>
+&lt;pre>&lt;code class="language-r">{
+&amp;quot;key&amp;quot;: &amp;quot;alt+-&amp;quot;,
+&amp;quot;command&amp;quot;: &amp;quot;type&amp;quot;,
+&amp;quot;args&amp;quot;: {
+&amp;quot;text&amp;quot;: &amp;quot;&amp;lt;-&amp;quot;
+},
+&amp;quot;when&amp;quot;: &amp;quot;editorTextFocus&amp;quot;
+}
+&lt;/code>&lt;/pre>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;a href="https://sspai.com/post/47386" target="_blank" rel="noopener">在VSCode 中配置R 语言运行环境&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="https://zhuanlan.zhihu.com/p/65966331" target="_blank" rel="noopener">VSCode 愉快地使用 R&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Writing technical content in Academic</title><link>/post/writing-technical-content/</link><pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate><guid>/post/writing-technical-content/</guid><description>&lt;p>Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p>
 &lt;p>&lt;strong>Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong>&lt;/p>
 &lt;p>On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p>
 &lt;h2 id="examples">Examples&lt;/h2>
