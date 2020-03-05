@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jiannan Zhang's Blog</title><link>/</link><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><description>Jiannan Zhang's Blog</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate><image><url>img/map[gravatar:%!s(bool=false) shape:circle]</url><title>Jiannan Zhang's Blog</title><link>/</link></image><item><title>Example Page 1</title><link>/courses/example/example1/</link><pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate><guid>/courses/example/example1/</guid><description>&lt;p>In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jiannan's Note</title><link>/</link><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><description>Jiannan's Note</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate><image><url>img/map[gravatar:%!s(bool=false) shape:circle]</url><title>Jiannan's Note</title><link>/</link></image><item><title>Example Page 1</title><link>/courses/example/example1/</link><pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate><guid>/courses/example/example1/</guid><description>&lt;p>In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p>
 &lt;h2 id="tip-1">Tip 1&lt;/h2>
 &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p>
 &lt;p>Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p>
@@ -78,7 +78,7 @@ PUBLISH_BRANCH: master
 PUBLISH_DIR: ./public
 &lt;/code>&lt;/pre>
 &lt;blockquote>
-&lt;p>注意替换&lt;strong>你的用户名&lt;/strong>。&lt;/p>
+&lt;p>注意替换&lt;strong>你的用户名&lt;/strong>以及&lt;strong>hugo的版本号&lt;/strong>。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="四部署工作">四、部署工作&lt;/h2>
 &lt;p>在VScode中的Powershell中输入密钥生成指令，提交到Github，实现两个仓库的关联，页面填写时注意修改名称为&lt;code>ACTIONS_DEPLOY_KEY&lt;/code>。&lt;/p>
@@ -136,9 +136,11 @@ public
 static/figures
 blogdown
 &lt;/code>&lt;/pre>
+&lt;p>然后就可以写写写，改改改了~~&lt;/p>
+&lt;p>至于模板的修改，个性化的改动就看个人的能力了~~&lt;/p>
 &lt;h2 id="七参考资料">七、参考资料&lt;/h2>
 &lt;p>
-&lt;a href="https://bookdown.org/yihui/blogdown/" target="_blank" rel="noopener">Blogdown&lt;/a> 看完你就知道喜欢上Bookdown@@&lt;br>
+&lt;a href="https://bookdown.org/yihui/blogdown/" target="_blank" rel="noopener">Blogdown&lt;/a> 看完你就会尝试Bookdown了@@&lt;br>
 &lt;a href="https://owovo.xyz/post/%E4%BD%BF%E7%94%A8GithubActions&amp;#43;Hugo&amp;#43;GithubPages%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html" target="_blank" rel="noopener">使用 Github Actions + Hugo + Github Pages搭建博客&lt;/a>&lt;br>
 &lt;a href="https://cosx.org/2018/01/build-blog-with-blogdown-hugo-netlify-github/" target="_blank" rel="noopener">用 R 语言的 blogdown+hugo+netlify+github 建博客&lt;/a>&lt;br>
 &lt;a href="https://gaolei.xyz/2019/08/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">从零开始搭建个人博客&lt;/a>&lt;/p></description></item><item><title>Bioconda</title><link>/post/bioconda/</link><pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate><guid>/post/bioconda/</guid><description>&lt;p>&lt;strong>查看已安装的库&lt;/strong>&lt;/p>

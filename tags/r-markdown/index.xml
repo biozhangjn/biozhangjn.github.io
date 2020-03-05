@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>R Markdown | Jiannan Zhang's Blog</title><link>/tags/r-markdown/</link><atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml"/><description>R Markdown</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate><image><url>img/map[gravatar:%!s(bool=false) shape:circle]</url><title>R Markdown</title><link>/tags/r-markdown/</link></image><item><title>Blogdown+Hugo+Github+Github Actions建立自动推送Blog</title><link>/post/blogdown-hugo-github-github-actions%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81blog/</link><pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate><guid>/post/blogdown-hugo-github-github-actions%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81blog/</guid><description>&lt;h2 id="使用-blogdownhugogithubgithub-actions博客">使用 Blogdown+Hugo+Github+Github Actions博客&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>R Markdown | Jiannan's Note</title><link>/tags/r-markdown/</link><atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml"/><description>R Markdown</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate><image><url>img/map[gravatar:%!s(bool=false) shape:circle]</url><title>R Markdown</title><link>/tags/r-markdown/</link></image><item><title>Blogdown+Hugo+Github+Github Actions建立自动推送Blog</title><link>/post/blogdown-hugo-github-github-actions%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81blog/</link><pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate><guid>/post/blogdown-hugo-github-github-actions%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81blog/</guid><description>&lt;h2 id="使用-blogdownhugogithubgithub-actions博客">使用 Blogdown+Hugo+Github+Github Actions博客&lt;/h2>
 &lt;p>之前使用Hexo建了个人主页，但是速度越来越慢，而且部署比较繁琐，最近学习R相关知识，发现Rmarkdown、Bookdown和Blogdown全家桶超级好用，所以与时俱进也升级了方案。&lt;/p>
 &lt;ul>
 &lt;li>Blogdown可以非常方便的使用Hugo进行操作，尤其是Rstudio高度集成，非常方便。&lt;/li>
@@ -41,7 +41,7 @@ PUBLISH_BRANCH: master
 PUBLISH_DIR: ./public
 &lt;/code>&lt;/pre>
 &lt;blockquote>
-&lt;p>注意替换&lt;strong>你的用户名&lt;/strong>。&lt;/p>
+&lt;p>注意替换&lt;strong>你的用户名&lt;/strong>以及&lt;strong>hugo的版本号&lt;/strong>。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="四部署工作">四、部署工作&lt;/h2>
 &lt;p>在VScode中的Powershell中输入密钥生成指令，提交到Github，实现两个仓库的关联，页面填写时注意修改名称为&lt;code>ACTIONS_DEPLOY_KEY&lt;/code>。&lt;/p>
@@ -99,9 +99,11 @@ public
 static/figures
 blogdown
 &lt;/code>&lt;/pre>
+&lt;p>然后就可以写写写，改改改了~~&lt;/p>
+&lt;p>至于模板的修改，个性化的改动就看个人的能力了~~&lt;/p>
 &lt;h2 id="七参考资料">七、参考资料&lt;/h2>
 &lt;p>
-&lt;a href="https://bookdown.org/yihui/blogdown/" target="_blank" rel="noopener">Blogdown&lt;/a> 看完你就知道喜欢上Bookdown@@&lt;br>
+&lt;a href="https://bookdown.org/yihui/blogdown/" target="_blank" rel="noopener">Blogdown&lt;/a> 看完你就会尝试Bookdown了@@&lt;br>
 &lt;a href="https://owovo.xyz/post/%E4%BD%BF%E7%94%A8GithubActions&amp;#43;Hugo&amp;#43;GithubPages%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html" target="_blank" rel="noopener">使用 Github Actions + Hugo + Github Pages搭建博客&lt;/a>&lt;br>
 &lt;a href="https://cosx.org/2018/01/build-blog-with-blogdown-hugo-netlify-github/" target="_blank" rel="noopener">用 R 语言的 blogdown+hugo+netlify+github 建博客&lt;/a>&lt;br>
 &lt;a href="https://gaolei.xyz/2019/08/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">从零开始搭建个人博客&lt;/a>&lt;/p></description></item><item><title>Bioconda</title><link>/post/bioconda/</link><pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate><guid>/post/bioconda/</guid><description>&lt;p>&lt;strong>查看已安装的库&lt;/strong>&lt;/p>
