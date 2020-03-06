@@ -102,8 +102,13 @@ blogdown
 &lt;p>然后就可以改改改，写写写了~~&lt;/p>
 &lt;p>至于模板的修改，个性化的改动就看个人的能力了~~&lt;/p>
 &lt;h2 id="七参考资料">七、参考资料&lt;/h2>
-&lt;p>
-&lt;a href="https://bookdown.org/yihui/blogdown/" target="_blank" rel="noopener">Blogdown&lt;/a> 看完你就会尝试Bookdown了@@&lt;br>
-&lt;a href="https://owovo.xyz/post/%E4%BD%BF%E7%94%A8GithubActions&amp;#43;Hugo&amp;#43;GithubPages%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html" target="_blank" rel="noopener">使用 Github Actions + Hugo + Github Pages搭建博客&lt;/a>&lt;br>
-&lt;a href="https://cosx.org/2018/01/build-blog-with-blogdown-hugo-netlify-github/" target="_blank" rel="noopener">用 R 语言的 blogdown+hugo+netlify+github 建博客&lt;/a>&lt;br>
-&lt;a href="https://gaolei.xyz/2019/08/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">从零开始搭建个人博客&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;ul>
+&lt;li>
+&lt;a href="https://bookdown.org/yihui/blogdown/" target="_blank" rel="noopener">Blogdown&lt;/a> 看完你就会尝试Bookdown了@@&lt;/li>
+&lt;li>
+&lt;a href="https://owovo.xyz/post/%E4%BD%BF%E7%94%A8GithubActions&amp;#43;Hugo&amp;#43;GithubPages%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html" target="_blank" rel="noopener">使用 Github Actions + Hugo + Github Pages搭建博客&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="https://cosx.org/2018/01/build-blog-with-blogdown-hugo-netlify-github/" target="_blank" rel="noopener">用 R 语言的 blogdown+hugo+netlify+github 建博客&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="https://gaolei.xyz/2019/08/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">从零开始搭建个人博客&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
