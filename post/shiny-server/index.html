@@ -5,7 +5,7 @@ Mar 11, 2020</span>
 <span class=middot-divider></span><span class=article-categories><i class="fas fa-folder mr-1"></i><a href=/categories/r/>R</a></span></div></div><div class=article-container><div class=article-style><h2 id=单细胞数据展示>单细胞数据展示</h2><p>最近一段时间，实验室测了不少单细胞数据，为了方便实验室成员预览数据和调用数据，之前利用Shiny在服务器后台运行<code>Rscript XX.R</code>进行数据在线展示，但是现在一下子增加很多数据，就开始考虑部署服务器版的Shiny Server了。未发表数据肯定不能托管，而且数据量也较大，VPS那点能力也hold不了，最后决定在自己服务器上面部署。</p><h3 id=需求单细胞数据实验室内部展示>需求：单细胞数据实验室内部展示</h3><h3 id=下载安装shiny-server>下载安装Shiny Server</h3><p><a href=https://rstudio.com/products/shiny/shiny-server/ target=_blank rel=noopener>官网安装</a>服务器版本，参考官网步骤即可，提前安装好<code>R</code>和<code>shiny</code>等包。</p><pre><code class=language-r>sudo apt-get install gdebi-core
 wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.13.944-amd64.deb
 sudo gdebi shiny-server-1.5.13.944-amd64.deb
-</code></pre><h3 id=软件参数调试>软件参数调试</h3><pre><code class=language-R>#打开配置文件，nano是示例，现在直接VScode打开编辑即可。  
+</code></pre><h3 id=软件参数调试>软件参数调试</h3><pre><code class=language-R>#打开配置文件，直接在VScode中打开编辑即可。  
 大赞VScode！！！！！！VScode YES！！！！！
 
 /etc/shiny-server/shiny-server.conf
