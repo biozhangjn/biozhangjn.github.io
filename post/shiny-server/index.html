@@ -51,7 +51,7 @@ sudo cat /var/log/shiny-server/demo/
 sudo systemctl restart shiny-server;
 #文件配置
 sudo vim /etc/shiny-server/shiny-server.conf
-</code></pre><h3 id=服务器相关代码官网文档不要再打开>服务器相关代码，官网文档，不要再打开~</h3><p>To start or stop the server manually, you can use the following commands.</p><pre><code class=language-R>sudo systemctl start shiny-server
+</code></pre><h3 id=服务器相关代码官网文档不用再去翻官网了>服务器相关代码，官网文档，不用再去翻官网了~~</h3><p>To start or stop the server manually, you can use the following commands.</p><pre><code class=language-R>sudo systemctl start shiny-server
 sudo systemctl stop shiny-server
 </code></pre><p>You can restart the server with:</p><pre><code class=language-R>sudo systemctl restart shiny-server
 </code></pre><p>This command will shutdown all running Shiny processes, disconnect all open connections, and re-initialize the server.</p><p>If you wish to reload the configuration but keep the server and all Shiny processes running without interruption, you can use the systemctl command to send a SIGHUP signal:</p><pre><code class=language-R>sudo systemctl kill -s HUP --kill-who=main shiny-server
