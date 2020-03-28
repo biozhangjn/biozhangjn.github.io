@@ -6,7 +6,7 @@ gtag('js',new Date());gtag('config','UA-162031575-1',{});document.addEventListen
 <span><i class="fas fa-bars"></i></span></button><div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none"><a class=navbar-brand href=/>Jiannan Zhang</a></div><div class="navbar-collapse main-menu-item collapse justify-content-start" id=navbar-content><ul class="navbar-nav d-md-inline-flex"><li class=nav-item><a class=nav-link href=/#posts><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#featured><span>Publications</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/courses/><span>Courses</span></a></li><li class=nav-item><a class=nav-link href=/#contact><span>Contact</span></a></li></ul></div><ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2"><li class=nav-item><a class="nav-link js-search" href=#><i class="fas fa-search" aria-hidden=true></i></a></li><li class=nav-item><a class="nav-link js-dark-toggle" href=#><i class="fas fa-moon" aria-hidden=true></i></a></li></ul></div></nav><article class=article><div class="article-container pt-3"><h1>Gene ID转换</h1><div class=article-metadata><span class=article-date>Last updated on
 Mar 13, 2020</span>
 <span class=middot-divider></span><span class=article-reading-time>5 min read</span>
-<span class=middot-divider></span><span class=article-categories><i class="fas fa-folder mr-1"></i><a href=/categories/r/>R</a></span></div></div><div class=article-container><div class=article-style><div id=为什么要在r中进行id转换 class="section level3"><h3>为什么要在R中进行ID转换</h3><p>在转录组数据或者其他分析中，好吧，其实是因为我做的物种是家鸡，根本就没有人和鼠那样有着非常完善和时刻更新的数据库做为支持，我经常会遇见GeneID转换，同源基因转换的问题，之前一直利用<code>Ensembl</code>主页里面的<code>biomart</code>进行数据下载，然后在excel里面利用vlookup进行操作，哎，费时费力，而且不能高度自动化和重复化<del>（传统湿实验室人员的基本操作思维）</del>，现在已经开始将大部分操作都在R里面进行了，刚好学习了<code>biomaRt</code>包可以完美替代之前的操作流程，下面就是相关笔记及备注：</p><blockquote><p>好吧，这是第一篇Rmd笔记，Rmarkdown真的超级好用啊！</p></blockquote></div><div id=安装所需的软件包 class="section level3"><h3>安装所需的软件包</h3><p>下面的R包也包括Y叔的<code>clusterProfiler</code>了，里面也有ID转换的板块，也是非常实用的，一并汇总了。</p><pre><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
+<span class=middot-divider></span><span class=article-categories><i class="fas fa-folder mr-1"></i><a href=/categories/r/>R</a></span></div></div><div class=article-container><div class=article-style><script src=/rmarkdown-libs/header-attrs/header-attrs.js></script><div id=为什么要在r中进行id转换 class="section level3"><h3>为什么要在R中进行ID转换</h3><p>在转录组数据或者其他分析中，好吧，其实是因为我做的物种是家鸡，根本就没有人和鼠那样有着非常完善和时刻更新的数据库做为支持，我经常会遇见GeneID转换，同源基因转换的问题，之前一直利用<code>Ensembl</code>主页里面的<code>biomart</code>进行数据下载，然后在excel里面利用vlookup进行操作，哎，费时费力，而且不能高度自动化和重复化<del>（传统湿实验室人员的基本操作思维）</del>，现在已经开始将大部分操作都在R里面进行了，刚好学习了<code>biomaRt</code>包可以完美替代之前的操作流程，下面就是相关笔记及备注：</p><blockquote><p>好吧，这是第一篇Rmd笔记，Rmarkdown真的超级好用啊！</p></blockquote></div><div id=安装所需的软件包 class="section level3"><h3>安装所需的软件包</h3><p>下面的R包也包括Y叔的<code>clusterProfiler</code>了，里面也有ID转换的板块，也是非常实用的，一并汇总了。</p><pre><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
   install.packages(&quot;BiocManager&quot;)
 
 BiocManager::install(&quot;biomaRt&quot;)</code></pre></div><div id=biomart示例 class="section level3"><h3><code>biomaRt</code>示例</h3><p>首先还是推荐看<a href=https://www.bioconductor.org/packages/devel/bioc/vignettes/biomaRt/inst/doc/biomaRt.html>官方文档</a>，没有什么攻略比官方文档更靠谱了，除非懒~</p><pre class=r><code>library(&quot;biomaRt&quot;)
@@ -149,10 +149,10 @@ genelist_megre</code></pre><pre><code>##  [1] &quot;ENSGALG00000001136&quot; &qu
 genelist_megre_Hs</code></pre><pre><code>##        Gene.stable.ID NCBI.gene.ID Gene.name Gene.stable.ID.1 NCBI.gene.ID.1
 ## 1  ENSGALG00000007728       770734            ENSG00000100033           5625
 ## 2  ENSGALG00000005956       423774            ENSG00000264230         728113
-## 3  ENSGALG00000011806    100859223            ENSG00000173702          56667
-## 4  ENSGALG00000011190    100857411     PLAC8  ENSG00000145287          51316
-## 5  ENSGALG00000005956       423774            ENSG00000265190         653145
-## 6  ENSGALG00000011687    100859120            ENSG00000185567         113146
+## 3  ENSGALG00000011687    100859120            ENSG00000185567         113146
+## 4  ENSGALG00000005956       423774            ENSG00000265190         653145
+## 5  ENSGALG00000011190    100857411     PLAC8  ENSG00000145287          51316
+## 6  ENSGALG00000011806    100859223            ENSG00000173702          56667
 ## 7  ENSGALG00000006407       378902            ENSG00000120889           8795
 ## 8  ENSGALG00000006407       378902            ENSG00000173535           8794
 ## 9  ENSGALG00000006407       378902            ENSG00000173530           8793
@@ -160,10 +160,10 @@ genelist_megre_Hs</code></pre><pre><code>##        Gene.stable.ID NCBI.gene.ID G
 ##    Gene.name.1
 ## 1        PRODH
 ## 2      ANXA8L1
-## 3        MUC13
-## 4        PLAC8
-## 5        ANXA8
-## 6       AHNAK2
+## 3       AHNAK2
+## 4        ANXA8
+## 5        PLAC8
+## 6        MUC13
 ## 7    TNFRSF10B
 ## 8    TNFRSF10C
 ## 9    TNFRSF10D
@@ -190,16 +190,16 @@ index &lt;- grep(&quot;ENSGALG&quot;, genelist)
 index</code></pre><pre><code>## [1]  7 13 14 15 16 17 18</code></pre><pre class=r><code># 筛选ENSGALG命名的基因并转换
 genelistA &lt;- genelist[index]
 geneA = bitr(genelistA, fromType=&quot;ENSEMBL&quot;, toType=c(&quot;SYMBOL&quot;, &quot;ENTREZID&quot;), OrgDb=&quot;org.Gg.eg.db&quot;)
-head(geneA)</code></pre><pre><code>##              ENSEMBL     SYMBOL  ENTREZID
-## 1 ENSGALG00000011190     PLACL2 100857411
-## 2 ENSGALG00000009628     KCTD12    425504
-## 3 ENSGALG00000010316      FRAS1    422506
-## 4 ENSGALG00000011687     AHNAK2 100859120
-## 5 ENSGALG00000011806      MUC13 100859223
-## 6 ENSGALG00000015656 PALM2AKAP2 100533110</code></pre><pre class=r><code># 筛选SYMBOL命名的基因并转换
+head(geneA)</code></pre><pre><code>##              ENSEMBL SYMBOL  ENTREZID
+## 1 ENSGALG00000011190 PLACL2 100857411
+## 2 ENSGALG00000009628 KCTD12    425504
+## 3 ENSGALG00000010316  FRAS1    422506
+## 4 ENSGALG00000011687 AHNAK2 100859120
+## 5 ENSGALG00000011806  MUC13 100859223
+## 6 ENSGALG00000015656  AKAP2 100533110</code></pre><pre class=r><code># 筛选SYMBOL命名的基因并转换
 genelistB &lt;- genelist[-index]
-geneB = bitr(genelistB, fromType=&quot;SYMBOL&quot;, toType=c(&quot;ENSEMBL&quot;, &quot;ENTREZID&quot;), OrgDb=&quot;org.Gg.eg.db&quot;)
-head(geneB)</code></pre><pre><code>##    SYMBOL            ENSEMBL  ENTREZID
+geneB = bitr(genelistB, fromType=&quot;SYMBOL&quot;, toType=c(&quot;ENSEMBL&quot;, &quot;ENTREZID&quot;), OrgDb=&quot;org.Gg.eg.db&quot;)</code></pre><pre><code>## Warning in bitr(genelistB, fromType = &quot;SYMBOL&quot;, toType = c(&quot;ENSEMBL&quot;,
+## &quot;ENTREZID&quot;), : 9.09% of input gene IDs are fail to map...</code></pre><pre class=r><code>head(geneB)</code></pre><pre><code>##    SYMBOL            ENSEMBL  ENTREZID
 ## 1  S100A6 ENSGALG00000041826    373951
 ## 2 S100A10 ENSGALG00000028774    396506
 ## 3    SNCG ENSGALG00000002015    395392
@@ -207,25 +207,24 @@ head(geneB)</code></pre><pre><code>##    SYMBOL            ENSEMBL  ENTREZID
 ## 5 S100A11 ENSGALG00000036711    396075
 ## 6     ID3 ENSGALG00000035317    395281</code></pre><pre class=r><code>gene &lt;- rbind(geneA,geneB)
 
-gene</code></pre><pre><code>##               ENSEMBL     SYMBOL  ENTREZID
-## 1  ENSGALG00000011190     PLACL2 100857411
-## 2  ENSGALG00000009628     KCTD12    425504
-## 3  ENSGALG00000010316      FRAS1    422506
-## 4  ENSGALG00000011687     AHNAK2 100859120
-## 5  ENSGALG00000011806      MUC13 100859223
-## 6  ENSGALG00000015656 PALM2AKAP2 100533110
-## 7  ENSGALG00000041826     S100A6    373951
-## 8  ENSGALG00000028774    S100A10    396506
-## 9  ENSGALG00000002015       SNCG    395392
-## 10 ENSGALG00000034458     S100A1 100858258
-## 11 ENSGALG00000036711    S100A11    396075
-## 12 ENSGALG00000035317        ID3    395281
-## 13 ENSGALG00000013072    AKR1B10    395338
-## 14 ENSGALG00000000318      CSRP1    396176
-## 15 ENSGALG00000010929    SPARCL1    422586
-## 16 ENSGALG00000000949      HBEGF    395654
-## 17 ENSGALG00000033226    FAM107B    426376</code></pre><pre class=r><code>summary(gene)</code></pre><pre><code>##    ENSEMBL             SYMBOL            ENTREZID        
-##  Length:17          Length:17          Length:17         
+gene</code></pre><pre><code>##               ENSEMBL  SYMBOL  ENTREZID
+## 1  ENSGALG00000011190  PLACL2 100857411
+## 2  ENSGALG00000009628  KCTD12    425504
+## 3  ENSGALG00000010316   FRAS1    422506
+## 4  ENSGALG00000011687  AHNAK2 100859120
+## 5  ENSGALG00000011806   MUC13 100859223
+## 6  ENSGALG00000015656   AKAP2 100533110
+## 12 ENSGALG00000041826  S100A6    373951
+## 21 ENSGALG00000028774 S100A10    396506
+## 31 ENSGALG00000002015    SNCG    395392
+## 41 ENSGALG00000034458  S100A1 100858258
+## 51 ENSGALG00000036711 S100A11    396075
+## 61 ENSGALG00000035317     ID3    395281
+## 8  ENSGALG00000000318   CSRP1    396176
+## 9  ENSGALG00000010929 SPARCL1    422586
+## 10 ENSGALG00000000949   HBEGF    395654
+## 11 ENSGALG00000033226 FAM107B    426376</code></pre><pre class=r><code>summary(gene)</code></pre><pre><code>##    ENSEMBL             SYMBOL            ENTREZID        
+##  Length:16          Length:16          Length:16         
 ##  Class :character   Class :character   Class :character  
 ##  Mode  :character   Mode  :character   Mode  :character</code></pre><pre class=r><code># 同时可以导出到本地csv文件
 #write.csv(as.data.frame(gene),&quot;./gene.csv&quot;,row.names =FALSE)</code></pre></div><div id=当然使用getbm也可以实现id转换但是结果会出现不少信息残缺还是推荐bitr class="section level3"><h3>当然，使用<code>getBM</code>也可以实现ID转换，但是结果会出现不少信息残缺，还是推荐<code>bitr</code></h3><pre class=r><code>gene_A &lt;- getBM(attributes=c(&quot;ensembl_gene_id&quot;, &quot;external_gene_name&quot;, &quot;entrezgene_id&quot;),
