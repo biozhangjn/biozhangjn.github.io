@@ -330,7 +330,7 @@ gene_ABmegre
 &lt;/code>&lt;/pre>
 &lt;h3 id="小结">小结&lt;/h3>
 &lt;p>学习使人懒惰，以前要花半小时进行EXCEL文件准备和ID转换，现在也就几分钟，成功偷懒~~&lt;/p>
-&lt;h3 id="参考资料">&lt;del>参考资料&lt;/del>&lt;/h3></description></item><item><title>Shiny Server</title><link>/post/shiny-server/</link><pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate><guid>/post/shiny-server/</guid><description>&lt;h2 id="单细胞数据展示">单细胞数据展示&lt;/h2>
+&lt;h3 id="参考资料">&lt;del>参考资料&lt;/del>&lt;/h3></description></item><item><title>Shiny Server</title><link>/post/linux/shiny-server/</link><pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate><guid>/post/linux/shiny-server/</guid><description>&lt;h2 id="单细胞数据展示">单细胞数据展示&lt;/h2>
 &lt;p>最近一段时间，实验室测了不少单细胞数据，为了方便实验室成员预览数据和调用数据，之前利用Shiny在服务器后台运行&lt;code>Rscript XX.R&lt;/code>进行数据在线展示，但是现在一下子增加很多数据，就开始考虑部署服务器版的Shiny Server了。未发表数据肯定不能托管，而且数据量也较大，VPS那点能力也hold不了，最后决定在自己服务器上面部署。&lt;/p>
 &lt;h3 id="需求单细胞数据实验室内部展示">需求：单细胞数据实验室内部展示&lt;/h3>
 &lt;h3 id="下载安装shiny-server">下载安装Shiny Server&lt;/h3>
@@ -408,7 +408,7 @@ runApp('/home/labwang/Rstudio/liver', port = 8887)
 &lt;/code>&lt;/pre>
 &lt;h3 id="页面调试">页面调试&lt;/h3>
 &lt;p>确定代码没错，网页正常打开后，&lt;code>index.html&lt;/code>就根据自己的水平进行修改美化了，我就不停的删删删删了~~&lt;/p>
-&lt;h3 id="参考资料">&lt;del>参考资料&lt;/del>&lt;/h3></description></item><item><title>Bioconda</title><link>/post/bioconda/</link><pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate><guid>/post/bioconda/</guid><description>&lt;p>&lt;strong>查看已安装的库&lt;/strong>&lt;/p>
+&lt;h3 id="参考资料">&lt;del>参考资料&lt;/del>&lt;/h3></description></item><item><title>Bioconda</title><link>/post/linux/bioconda/</link><pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate><guid>/post/linux/bioconda/</guid><description>&lt;p>&lt;strong>查看已安装的库&lt;/strong>&lt;/p>
 &lt;pre>&lt;code>conda list
 &lt;/code>&lt;/pre>
 &lt;p>&lt;strong>安装和更新&lt;/strong>&lt;/p>
@@ -429,7 +429,7 @@ conda env list #显示所有环境
 &lt;/code>&lt;/pre>
 &lt;p>&lt;strong>清理软件&lt;/strong>&lt;/p>
 &lt;pre>&lt;code>conda clean -p //删除多余的包
-conda clean -y -all //删除所有的安装包及cache&lt;/code>&lt;/pre></description></item><item><title>Salmon代码备存</title><link>/post/salmon/</link><pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate><guid>/post/salmon/</guid><description>&lt;p>#Salmon代码备存&lt;/p>
+conda clean -y -all //删除所有的安装包及cache&lt;/code>&lt;/pre></description></item><item><title>Salmon代码备存</title><link>/post/linux/salmon/</link><pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate><guid>/post/linux/salmon/</guid><description>&lt;p>#Salmon代码备存&lt;/p>
 &lt;p>听说你还可以分析scRNA&lt;/p>
 &lt;pre>&lt;code>salmon alevin -l ISR -1 Pi_F_S1_L005_R1_001.fastq.gz -2 Pi_F_S1_L005_R2_001.fastq.gz --chromium -i ~/index/ggzjn_index/ -p 10 --dumpMtx -o alevin_output/ --tgMap txp2gene.txt --expectCells 18000
 salmon alevin -l ISR -1 Pi_M_S1_L004_R1_001.fastq.gz -2 Pi_M_S1_L004_R2_001.fastq.gz --chromium -i ~/index/ggzjn_index/ -p 15 --dumpMtx -o alevin_output/ --tgMap txp2gene.txt --expectCells 18000
@@ -563,7 +563,7 @@ trimmomatic PE -phred33 -threads 20 ${fn}_1.fq.gz ${fn}_2.fq.gz ${fn}_paired_1.f
 &lt;li>⬆️ &lt;strong>Updating?&lt;/strong> View the
 &lt;a href="https://sourcethemes.com/academic/docs/update/" target="_blank" rel="noopener">Update Guide&lt;/a> and
 &lt;a href="https://sourcethemes.com/academic/updates/" target="_blank" rel="noopener">Release Notes&lt;/a>&lt;/li>
-&lt;li>❤ &lt;strong>Support development&lt;/strong> of Academic:
+&lt;li>❤️ &lt;strong>Support development&lt;/strong> of Academic:
 &lt;ul>
 &lt;li>☕️
 &lt;a href="https://paypal.me/cushen" target="_blank" rel="noopener">&lt;strong>Donate a coffee&lt;/strong>&lt;/a>&lt;/li>
